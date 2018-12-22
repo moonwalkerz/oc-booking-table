@@ -1,0 +1,4 @@
+title: Bookings
+modelClass: MartiniMultimedia\Table\Models\Booking
+toolbar:
+    buttons: reorder_toolbar

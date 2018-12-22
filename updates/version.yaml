@@ -1,0 +1,14 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table martinimultimedia_table_bookings'
+    - builder_table_create_martinimultimedia_table_bookings.php
+1.0.3:
+    - 'Updated table martinimultimedia_table_bookings'
+    - builder_table_update_martinimultimedia_table_bookings.php
+1.0.4:
+    - 'Updated table martinimultimedia_table_bookings'
+    - builder_table_update_martinimultimedia_table_bookings_2.php
+1.0.5:
+    - 'Updated table martinimultimedia_table_bookings'
+    - builder_table_update_martinimultimedia_table_bookings_3.php

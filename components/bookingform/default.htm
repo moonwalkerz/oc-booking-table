@@ -1,0 +1,18 @@
+<div id="bookingform">
+{% partial  __SELF__ ~ '::bookingform' %}       
+</div>
+
+                                
+{% put scripts %}
+<script>
+$(document).ready(function(){
+       $('.datepicker').datepicker(
+           {
+               language:'it',
+               startDate: 'now'
+           }
+       );
+
+});
+</script>
+{% endput %}

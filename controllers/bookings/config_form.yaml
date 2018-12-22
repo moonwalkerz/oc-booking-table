@@ -1,0 +1,10 @@
+name: Bookings
+form: $/martinimultimedia/table/models/booking/fields.yaml
+modelClass: MartiniMultimedia\Table\Models\Booking
+defaultRedirect: martinimultimedia/table/bookings
+create:
+    redirect: 'martinimultimedia/table/bookings/update/:id'
+    redirectClose: martinimultimedia/table/bookings
+update:
+    redirect: martinimultimedia/table/bookings
+    redirectClose: martinimultimedia/table/bookings

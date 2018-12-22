@@ -1,0 +1,11 @@
+list: $/martinimultimedia/table/models/booking/columns.yaml
+modelClass: MartiniMultimedia\Table\Models\Booking
+title: Bookings
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'martinimultimedia/table/bookings/update/:id'

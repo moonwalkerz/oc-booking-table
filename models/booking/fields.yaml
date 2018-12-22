@@ -1,0 +1,27 @@
+fields:
+    name:
+        label: 'martinimultimedia.table::lang.name'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    phone:
+        label: 'martinimultimedia.table::lang.phone'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    booking_date:
+        label: 'martinimultimedia.table::lang.booking_date'
+        oc.commentPosition: ''
+        mode: date
+        span: auto
+        type: datepicker
+    booking_time:
+        label: 'Prenotato alle ore'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    guests:
+        label: 'martinimultimedia.table::lang.guests'
+        oc.commentPosition: ''
+        span: auto
+        type: number

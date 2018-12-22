@@ -1,0 +1,11 @@
+plugin:
+    name: 'martinimultimedia.table::lang.plugin.name'
+    description: 'martinimultimedia.table::lang.plugin.description'
+    author: MartiniMultimedia
+    icon: oc-icon-beer
+    homepage: ''
+navigation:
+    menu-item-bookings:
+        label: 'martinimultimedia.table::lang.bookings'
+        url: martinimultimedia/table/bookings
+        icon: icon-beer
