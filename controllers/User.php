@@ -3,7 +3,7 @@
 use Backend\Classes\Controller;
 use BackendMenu;
 
-class Bookings extends Controller
+class User extends Controller
 {
     public $implement = ['Backend\Behaviors\ListController','Backend\Behaviors\FormController','Backend\Behaviors\ReorderController'];
     
@@ -11,9 +11,14 @@ class Bookings extends Controller
     public $formConfig = 'config_form.yaml';
     public $reorderConfig = 'config_reorder.yaml';
 
+    /*
+    public $requiredPermissions = [
+        'Telegram' 
+    ];
+*/
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('MartiniMultimedia.Table', 'menu-item-bookings', 'side-menu-item1');
+        BackendMenu::setContext('MartiniMultimedia.Table', 'menu-item-bookings', 'side-menu-item2');
     }
 }

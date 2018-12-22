@@ -9,3 +9,8 @@ navigation:
         label: 'martinimultimedia.table::lang.bookings'
         url: martinimultimedia/table/bookings
         icon: icon-beer
+        sideMenu:
+            side-menu-item:
+                label: Users
+                url: martinimultimedia/table/user
+                icon: icon-user

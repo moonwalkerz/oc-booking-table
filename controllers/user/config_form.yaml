@@ -1,0 +1,10 @@
+name: User
+form: $/martinimultimedia/table/models/user/fields.yaml
+modelClass: EugeneTolok\Telegram\Models\User
+defaultRedirect: martinimultimedia/table/user
+create:
+    redirect: 'martinimultimedia/table/user/update/:id'
+    redirectClose: martinimultimedia/table/user
+update:
+    redirect: martinimultimedia/table/user
+    redirectClose: martinimultimedia/table/user

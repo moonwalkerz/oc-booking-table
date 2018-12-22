@@ -1,0 +1,41 @@
+fields:
+    tg_id:
+        label: 'Telegram ID'
+        oc.commentPosition: ''
+        span: auto
+        type: number
+    user_name:
+        label: Username
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    first_name:
+        label: 'First Name'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    last_name:
+        label: 'Last Name'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    dialog_id:
+        label: 'Dialog ID'
+        oc.commentPosition: ''
+        span: auto
+        type: number
+    step_count:
+        label: 'Step Count'
+        oc.commentPosition: ''
+        span: auto
+        type: number
+    variables:
+        label: Variables
+        size: large
+        oc.commentPosition: ''
+        span: full
+        type: textarea
+    blocked:
+        label: Blocked
+        span: auto
+        type: switch

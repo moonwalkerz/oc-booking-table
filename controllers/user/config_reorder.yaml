@@ -1,0 +1,4 @@
+title: User
+modelClass: MartiniMultimedia\Table\Models\User
+toolbar:
+    buttons: reorder_toolbar

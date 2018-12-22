@@ -12,3 +12,6 @@
 1.0.5:
     - 'Updated table martinimultimedia_table_bookings'
     - builder_table_update_martinimultimedia_table_bookings_3.php
+1.0.6:
+    - 'Created table martinimultimedia_table_users'
+    - builder_table_create_martinimultimedia_table_users.php

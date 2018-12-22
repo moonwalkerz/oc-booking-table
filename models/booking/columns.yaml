@@ -1,21 +1,21 @@
 columns:
     booking_date:
-        label: 'martinimultimedia.table::lang.booking_date'
+        label: 'martinimultimedia.table::lang.bookingform.booking_date'
         type: date
         sortable: true
     booking_time:
-        label: 'martinimultimedia.table::lang.booking_time'
+        label: 'martinimultimedia.table::lang.bookingform.booking_time'
         type: text
         sortable: true
     name:
-        label: 'martinimultimedia.table::lang.name'
+        label: 'martinimultimedia.table::lang.bookingform.name'
         type: text
         searchable: true
         sortable: true
     guests:
-        label: 'martinimultimedia.table::lang.plugin.guests'
+        label: 'martinimultimedia.table::lang.bookingform.guests'
         type: number
     phone:
-        label: 'martinimultimedia.table::lang.phone'
+        label: 'martinimultimedia.table::lang.bookingform.phone'
         type: text
         searchable: true

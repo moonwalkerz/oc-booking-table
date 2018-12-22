@@ -1,0 +1,25 @@
+columns:
+    id:
+        label: ID
+        type: number
+        searchable: true
+        sortable: true
+    tg_id:
+        label: 'Telegram ID'
+        type: number
+        searchable: true
+        sortable: true
+    chat_id:
+        label: 'Chat ID'
+        type: number
+        searchable: true
+        sortable: true
+    first_name:
+        label: 'First Name'
+        type: text
+        searchable: true
+        sortable: true
+    blocked:
+        label: Blocked
+        type: switch
+        sortable: true
