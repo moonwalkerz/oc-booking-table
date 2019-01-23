@@ -10,11 +10,13 @@ use Redirect;
 use Flash;
 use MartiniMultimedia\Table\Models\Booking;
 
-use EugeneTolok\Telegram\Models\Settings;
+use Carbon\Carbon;
+
+//use EugeneTolok\Telegram\Models\Settings;
 use Telegram\Bot\Api;
 use \Telegram\Bot\Keyboard\Keyboard as K;
 
-use EugeneTolok\Telegram\Models\User;
+//use EugeneTolok\Telegram\Models\User;
 use Log;
 
 class BookingForm extends ComponentBase
@@ -61,10 +63,13 @@ class BookingForm extends ComponentBase
 	public function onSend()
 	{
 
-		/*
 		$data = post();
 		$rules = [
 			'name'=> 'required|min:5',
+			'guests' => 'required',
+			'email' => 'required',
+			'date' => 'required',
+			'time' => 'required',
 			'phone'=> 'required',
 		];
 		$validator = Validator::make($data,$rules);
@@ -73,19 +78,16 @@ class BookingForm extends ComponentBase
 		if ($validator->fails()){
 			throw new ValidationException($validator);
 		} else {
-*/
 
 			$booking=new Booking();
-
 			$booking->name=Input::get('name');
 			$booking->guests=Input::get('guests');
 			$booking->booking_date=Input::get('date');
 			$booking->booking_time=Input::get('time');
-			$booking->phone=Input::get('phone');
-			
+			$booking->phone=Input::get('phone');		
 			$booking->save();
+			$id=$booking->getKey();
 
-		
 			$vars = [
 				'name'=>Input::get('name'),
 				'email'=> 'info@locandadelleterme.it',
@@ -95,91 +97,37 @@ class BookingForm extends ComponentBase
 				'phone'=>Input::get('phone')
 			];
 			
-
-
-			$API_KEY = Settings::get('tg_api_key');
+			$API_KEY = "677535432:AAFCdwr0Hvdd8TgdtR0ayJjg-lIXiG6zVWc";//Settings::get('tg_api_key');
 			$telegram = new Api($API_KEY);
 					
-//			$users_ids = explode(",", "194123828,23567559");
-$users_ids = explode(",", "23567559,194123828");
+			//			$users_ids = explode(",", "194123828,23567559");
+			$users_ids = explode(",", "23567559,194123828");
 
 
-//$prenotazione = "Ciao, sono Phil ho appena raccolto una nuova prenotazione:" . " Nome:".$vars['name']." N° di Coperti: ".$vars['guests']." Booking date:".$vars['booking_date']." Ora: ".$vars['booking_time'].'<a href="tel:'.$vars['phone'].'">'.$vars['phone'].'</a>';
-$prenotazione = "Ciao, sono Phil ho appena raccolto una nuova prenotazione:" . "\n Nome:".$vars['name']."\n N° di Coperti: ".$vars['guests']."\n Booking date:".$vars['booking_date']."\n Ora: ".$vars['booking_time'].' \n Tel'.$vars['phone'];
+			//$prenotazione = "Ciao, sono Phil ho appena raccolto una nuova prenotazione:" . " Nome:".$vars['name']." N° di Coperti: ".$vars['guests']." Booking date:".$vars['booking_date']." Ora: ".$vars['booking_time'].'<a href="tel:'.$vars['phone'].'">'.$vars['phone'].'</a>';
+			$prenotazione = "Ciao, sono Phil ho appena raccolto una nuova prenotazione:" . "\n Nome:".$vars['name']."\n N° di Coperti: ".$vars['guests']."\n Booking date:".$vars['booking_date']."\n Ora: ".$vars['booking_time']."\n Tel".$vars['phone'];
 
 			foreach ($users_ids as $key => $user_id) {
-					try{
+				try{
 
-						$keyboard = K::make()->inline()
-						->row(
-							K::inlineButton(['text' => 'Conferma '.$vars['name'], 'callback_data' => 'conferma']),
-							K::inlineButton(['text' => 'Declina', 'callback_data' => 'declina'])
-						);
-						$telegram->sendMessage([
-							'chat_id' => $user_id,
-							'text' => $prenotazione,
-							'reply_markup' => $keyboard
-								]);
-	
-
-						$group_users = User::where('chat_id', '=', $user_id)->get();
-						foreach ($group_users as $key => $group_user) {
-							$group_user->blocked = 0;			
-							$group_user->save();
-						}
-
-					}
-					catch( Exception $ErrorHandle ){
-						$group_users = User::where('chat_id', '=', $user_id)->get();
-						foreach ($group_users as $key => $group_user) {
-							$group_user->blocked = 1;
-							$group_user->save();
-						}
-					}
+					$keyboard = K::make()->inline()
+					->row(
+						K::inlineButton(['text' => 'Conferma '.$vars['name'], 'callback_data' => 'conferma-'.$id ]),
+						K::inlineButton(['text' => 'Declina', 'callback_data' => 'declina-'.$id])
+					);
+					$telegram->sendMessage([
+						'chat_id' => $user_id,
+						'text' => $prenotazione,
+						'reply_markup' => $keyboard
+							]);
 				}
-		
-		
+				catch( Exception $ErrorHandle ) {
+				}
+						
+			}
+		}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		//	$email=Input::get('email');
-		//	$name=Input::get('name');
-		
-			/*
-			"An exception has been thrown during the rendering of a template ("Object of class Illuminate\Mail\Message could not be converted to string") 
-			*/
-		
-/*
-			Mail::send('martinimultimedia.table::mail.message',$vars, function ($message)  {
-				$message->to($this->property('emailto'),$this->property('emailtoname'));
-			//	$message->replyTo($email, $name);
-				$message->subject($this->property('subject'));
-				});
-*/			
-			Flash::success('Richiesta inviata');
+				Flash::success('Richiesta inviata');
 			return;
 			//return Redirect::back();
 

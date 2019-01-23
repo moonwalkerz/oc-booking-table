@@ -1,6 +1,6 @@
 name: User
 form: $/martinimultimedia/table/models/user/fields.yaml
-modelClass: EugeneTolok\Telegram\Models\User
+modelClass: MartiniMultimedia\Table\Models\User
 defaultRedirect: martinimultimedia/table/user
 create:
     redirect: 'martinimultimedia/table/user/update/:id'

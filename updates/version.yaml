@@ -15,3 +15,21 @@
 1.0.6:
     - 'Created table martinimultimedia_table_users'
     - builder_table_create_martinimultimedia_table_users.php
+1.0.7:
+    - 'Updated table martinimultimedia_table_bookings'
+    - builder_table_update_martinimultimedia_table_bookings_4.php
+1.0.8:
+    - 'Updated table martinimultimedia_table_bookings'
+    - builder_table_update_martinimultimedia_table_bookings_5.php
+1.0.9:
+    - 'Updated table martinimultimedia_table_bookings'
+    - builder_table_update_martinimultimedia_table_bookings_6.php
+1.0.10:
+    - 'Updated table martinimultimedia_table_bookings'
+    - builder_table_update_martinimultimedia_table_bookings_7.php
+1.0.11:
+    - 'Updated table martinimultimedia_table_bookings'
+    - builder_table_update_martinimultimedia_table_bookings_8.php
+1.0.12:
+    - 'Updated table martinimultimedia_table_bookings'
+    - builder_table_update_martinimultimedia_table_bookings_9.php

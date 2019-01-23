@@ -3,6 +3,7 @@
         'name' => 'Tavolo',
         'description' => 'Prenota un tavolo di un ristorante',
         'guests' => 'Ospiti',
+        'booking' => 'Prenotazioni'
     ],
     'bookingform' => [
         'name' => 'Name',

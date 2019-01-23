@@ -8,10 +8,9 @@ use Carbon\Carbon;
 class Booking extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
     use \October\Rain\Database\Traits\SoftDelete;
 
-    protected $dates = ['deleted_at'];
+    protected $dates = ['deleted_at','created_at','updated_at','booking_date'];
 
     /*
      * Validation
@@ -19,14 +18,27 @@ class Booking extends Model
     public $rules = [
     ];
 
+
+    public function setBookingDateAttribute($value)
+    {
+        list($d,$m,$y)=explode('/',$value);
+        $this->attributes['booking_date'] =$y."-".$m."-".$d;
+    }
+
+    public function getBookingDateAttribute($value)
+    {
+        list($d,$m,$y)=explode('-',$value);
+        return $d."/".$m."/".$y;
+    }
+
     /**
      * @var string The database table used by the model.
      */
     public $table = 'martinimultimedia_table_bookings';
 
-
-    public function setBookingDateAttribute($value)
-       {
-  //      $this->attributes['booking_date'] = Carbon::createFromFormat('d/m/Y', $value); 
+    public function scopeNextBookings($query) {
+        return $query->where('booking_date','>=', Carbon::now())->orderby('booking_date','disc');
     }
+    
+
 }

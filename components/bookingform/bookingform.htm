@@ -1,18 +1,12 @@
-{% flash success %}
-<div class="alert alert-success alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">×</span>
-    </button>
-    {{ message }}
-</div>
-{% endflash %}
 
-<form class="form-email" data-request="onSend"  data-request-validate data-request-flash data-request-update="'{{__SELF__}}::bookingform': '#bookingform'">
-    <input class="validate-required field-error" name="name" placeholder="Prenotato a nome di" type="text">
-    <input class="validate-required field-error" name="phone" placeholder="Telefono" type="text">
+<form class="form-email" data-request="{{__SELF__}}::onSend"  data-request-validate data-request-flash data-request-update="'{{__SELF__}}::thankyou': '#bookingform'">
+    <input  name="name" placeholder="Prenotato a nome di" type="text">
+	
+
+    <input  name="phone" placeholder="Telefono" type="text">
     <div class="select-option col-md-6 p0">
         <i class="ti-angle-down"></i>
-        <select class="validate-required field-error" name="guests">
+        <select name="guests">
             <option selected="" value="">Ospiti</option>
             <option value="1">{{ 'Uno'|_ }}</option>
             <option value="2">{{ 'Due'|_ }}</option>

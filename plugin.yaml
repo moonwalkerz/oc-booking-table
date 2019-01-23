@@ -6,10 +6,14 @@ plugin:
     homepage: ''
 navigation:
     menu-item-bookings:
-        label: 'martinimultimedia.table::lang.bookings'
+        label: 'martinimultimedia.table::lang.plugin.booking'
         url: martinimultimedia/table/bookings
         icon: icon-beer
         sideMenu:
+            side-menu-item2:
+                label: Prenotazioni
+                url: martinimultimedia/table/bookings
+                icon: icon-bookmark
             side-menu-item:
                 label: Users
                 url: martinimultimedia/table/user

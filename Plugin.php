@@ -13,6 +13,16 @@ class Plugin extends PluginBase
 
     public function registerSettings()
     {
+        return [
+            'config' => [
+                'label'       => 'Table Booking',
+                'icon'        => 'oc-icon-beer',
+                'description' => 'Booking Table Config.',
+                'class'       => 'MartiniMultimedia\Table\Models\Settings',
+          //      'permissions' => ['Table'],
+                'order'       => 600
+            ]
+        ];
     }
 
 /*

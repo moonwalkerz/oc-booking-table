@@ -1,5 +1,5 @@
 list: $/martinimultimedia/table/models/user/columns.yaml
-modelClass: EugeneTolok\Telegram\Models\User
+modelClass: MartiniMultimedia\Table\Models\User
 title: User
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
